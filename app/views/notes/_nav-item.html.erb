@@ -1,0 +1,8 @@
+        <li class="nav-item">
+          <p class="navbar-brand" ><%= link_to '編集', edit_note_path(@note),class:"link-none-white" %></p>
+        </li>
+        <li class="nav-item">
+          <p class="navbar-brand" ><%= link_to '削除', note_path(@note),class:"link-none-white",
+                        method: :delete,
+                        data: { confirm: 'このノートを削除しますか?' } %></p>
+        </li>

@@ -1,0 +1,17 @@
+<%= render "header" %>
+
+<main>
+  <div class="container py-4">
+    <div class="mb-4 bg-light rounded-3">
+      <div class="container-fluid py-5">
+      <table>
+        <% @notes.each do |note| %>
+          <tr>
+            <td><%= link_to note.title, note_path(note), class:"link-none" %></td>
+          </tr>
+        <% end %>
+      </table>
+      </div>
+    </div>
+  </div>
+</main>

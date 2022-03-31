@@ -1,0 +1,15 @@
+<%= render "header-show" %>
+<main>
+  <div class="container py-4">
+
+    <div class="mb-4 bg-light rounded-3">
+      <div class="container-fluid py-5">
+        <h3 class="fw-bold"><%= @note.title %></h3>
+        <p class="col"><%= text_url_to_link(safe_join((h(@text)).split("\n"),tag(:br))).html_safe %></p>
+      </div>
+    </div>
+  </div>
+</main>
+
+
+

@@ -1,0 +1,25 @@
+<%= render "header-edit" %>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <h2 class="text-center">編集</h2>
+        <%= form_with(model: @note, local: true) do |form| %>
+          <div class="form_group pt-4 pb-3">
+            <%= form.label :title %><br>
+            <%= form.text_field :title, class: "form-control"  %>
+          </div>
+          <div class="form_group pt-4 pb-3">
+                <%= form.label :text %><br>
+                <%= form.text_area :text, rows: 20, class: "form-control" %>
+              </div>
+              
+              <div class="text-center"> 
+                <%= form.submit "保存", class: "btn btn-primary" %>
+              </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+
