@@ -1,4 +1,5 @@
 class NotesController < ApplicationController
+  before_action :basic_auth
   protect_from_forgery
   def index
     @notes = Note.all.order("created_at DESC")
@@ -11,7 +12,7 @@ class NotesController < ApplicationController
     @all_title = Note.where.not(title: @note.title)
 
     @all_title.each do |all_title|
-      text = text.sub(/#{all_title.title}/, "#{all_title.title}(http://localhost:3000/notes/#{all_title.id})")
+      text = text.sub(/#{all_title.title}/, "#{all_title.title}(http://my-note-37454.herokuapp.com/notes/#{all_title.id})")
     end
     @text = text
   end
@@ -56,7 +57,12 @@ class NotesController < ApplicationController
   end
 
   private
-    def note_params
-      params.require(:note).permit(:title, :text)
+  def basic_auth
+    authenticate_or_request_with_http_basic do |username, password|
+      username == 'admin' && password == '1234'
     end
+  end
+  def note_params
+    params.require(:note).permit(:title, :text)
+  end
 end
