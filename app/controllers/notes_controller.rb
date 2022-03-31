@@ -11,7 +11,7 @@ class NotesController < ApplicationController
     @all_title = Note.where.not(title: @note.title)
 
     @all_title.each do |all_title|
-      text = text.sub(/#{all_title.title}/, "#{all_title.title}(http://my-note-37454.herokuapp.com/notes/#{all_title.id})")
+      text = text.sub(/#{all_title.title}/, "#{all_title.title}(http://localhost:3000/notes/#{all_title.id})")
     end
     @text = text
   end

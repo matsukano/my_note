@@ -44,7 +44,7 @@ My note
 
 【OS】　MacOS Monterey
 
-【DB　mysql2 
+【DB】　mysql2 
 
 ## ローカルでの動作方法
 以下のコマンドを順に実行  
