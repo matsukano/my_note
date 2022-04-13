@@ -13,9 +13,6 @@
  *= require_tree .
  *= require_self
  */
-
- @import 'rouge';
- 
 .link-none-white{
   text-decoration: none;
   color: white
